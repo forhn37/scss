@@ -1,14 +1,16 @@
+// pokemon 모듈 불러오기
 const pokemon = require('pokemon');
+// pokemonlist 변수로 선언하기
 const pokemonlist = pokemon.all('ko');
-
+// 파일 시스템 불러오기
 let fs = require('fs');
-const { error } = require('console');
+// const { error } = require('console');
 // console.log(pokemonlist[0]);
 
 // console.log(pokemon.random('ko'));
 
 // let HTMLLi = `<li>${pokemonlist[0]}</li>`
-
+// list 배열만들어서 여기에 for문으로 
 let list = [];
 for(i=0; i<pokemonlist.length; i ++) {
   list[list.length] = `<li>${pokemonlist[i]}</li>`
@@ -24,6 +26,9 @@ let doc =
 <body>
   ${list}
 </body>
+<style>
+
+</style>
 </html>`;
 
 fs.writeFile('app.html',doc, function(err) {
