@@ -34,9 +34,15 @@ fs.writeFile('app.html',doc, function(err) {
 const http = require('http');
 
 const server = http.createServer(function(request, response) {
-  response.writeHead(200, {'Content-Type':'text/html'});
-  response.end()
-}).listen(5050)
 
-
-
+  fs.readFile("app.html",function(err, data) {
+    if(err) {
+      console.err('에러입니다');
+    } else {
+      response.writeHead(200, {'Content-Type':'text/html'});
+      response.end(data);
+    }
+  }
+  )
+}
+).listen(5050);
