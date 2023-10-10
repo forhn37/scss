@@ -3,7 +3,7 @@ const pokemonlist = pokemon.all('ko');
 
 let fs = require('fs');
 const { error } = require('console');
-console.log(pokemonlist[0]);
+// console.log(pokemonlist[0]);
 
 // console.log(pokemon.random('ko'));
 
@@ -25,6 +25,7 @@ let doc =
   ${list}
 </body>
 </html>`;
+
 fs.writeFile('app.html',doc, function(err) {
   if(err) {
     new error("실패입니다")
